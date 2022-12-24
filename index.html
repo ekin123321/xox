@@ -188,40 +188,53 @@
 
             }
         })
-        
+
         function kontrol() {
-                if (isaret[0] == isaret[1] && isaret[0] == isaret[2]) {
-                    console.log(isaret[0] + " kazandı");
+            if (isaret[0] == isaret[1] && isaret[0] == isaret[2]) {
+                console.log(isaret[0] + " kazandı");
+                kazanan = isaret[0];
+            } else if (isaret[3] == isaret[4] && isaret[3] == isaret[5]) {
+                console.log(isaret[3] + " kazandı");
+                kazanan = isaret[3];
+            } else if (isaret[6] == isaret[7] && isaret[6] == isaret[8]) {
+                console.log(isaret[7] + " kazandı");
+                kazanan = isaret[7];
+            } else if (isaret[0] == isaret[3] && isaret[0] == isaret[6]) {
+                console.log(isaret[0] + " kazandı");
+                kazanan = isaret[0];
+            } else if (isaret[1] == isaret[4] && isaret[1] == isaret[7]) {
+                console.log(isaret[1] + " kazandı");
+                kazanan = isaret[1];
+            } else if (isaret[2] == isaret[5] && isaret[2] == isaret[8]) {
+                console.log(isaret[2] + " kazandı");
+                kazanan = isaret[2];
+            } else if (isaret[0] == isaret[4] && isaret[0] == isaret[8]) {
+                console.log(isaret[0] + " kazandı"); 0,
+
+
                     kazanan = isaret[0];
-                } else if (isaret[3] == isaret[4] && isaret[3] == isaret[5]) {
-                    console.log(isaret[3] + " kazandı");
-                    kazanan = isaret[3];
-                } else if (isaret[6] == isaret[7] && isaret[6] == isaret[8]) {
-                    console.log(isaret[7] + " kazandı");
-                    kazanan = isaret[7];
-                } else if (isaret[0] == isaret[3] && isaret[0] == isaret[6]) {
-                    console.log(isaret[0] + " kazandı");
-                    kazanan = isaret[0];
-                } else if (isaret[1] == isaret[4] && isaret[1] == isaret[7]) {
-                    console.log(isaret[1] + " kazandı");
-                    kazanan = isaret[1];
-                } else if (isaret[2] == isaret[5] && isaret[2] == isaret[8]) {
-                    console.log(isaret[2] + " kazandı");
-                    kazanan = isaret[2];
-                } else if (isaret[0] == isaret[4] && isaret[0] == isaret[8]) {
-                    console.log(isaret[0] + " kazandı"); 0,
-
-
-                        kazanan = isaret[0];
-                } else if (isaret[2] == isaret[4] && isaret[2] == isaret[6]) {
-                    console.log(isaret[2] + " kazandı");
-                    kazanan = isaret[2];
-                }
-
-                if (kazanan != undefined) {
-                    skoryazdir(kazanan);
-                }
+            } else if (isaret[2] == isaret[4] && isaret[2] == isaret[6]) {
+                console.log(isaret[2] + " kazandı");
+                kazanan = isaret[2];
             }
+
+            if (kazanan != undefined) {
+                skoryazdir(kazanan);
+            }
+        }
+        function skoryazdir(kisi) {
+            switch (kisi) {
+                case "X":
+                    skorx += 1;
+                    break;
+                case "O":
+                    skoro += 1;
+                    break;
+            }
+
+            $("small").text(skorx + ":" + skoro);
+            reset();
+        }
 
         $().ready(function () {
 
@@ -275,19 +288,6 @@
 
 
 
-            function skoryazdir(kisi) {
-                switch (kisi) {
-                    case "X":
-                        skorx += 1;
-                        break;
-                    case "O":
-                        skoro += 1;
-                        break;
-                }
-
-                $("small").text(skorx + ":" + skoro);
-                reset();
-            }
 
             function reset() {
                 $("td").text("?");
