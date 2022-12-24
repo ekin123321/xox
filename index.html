@@ -86,7 +86,7 @@
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
     </script>
-    <script src="app.js"></script>
+
     <script>
         var index = 0;
         var kazanan = "";
@@ -175,7 +175,7 @@
         })
         siraref.on("value", (snapshot) => {
             sira = snapshot.val()
-            kontrol()
+
         })
         tiksayref.on("value", (snapshot) => {
             tiksay = snapshot.val()
@@ -191,6 +191,7 @@
                 }
 
             }
+            kontrol()
         })
 
         function kontrol() {
