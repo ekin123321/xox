@@ -171,6 +171,7 @@
         })
         siraref.on("value", (snapshot) => {
             sira = snapshot.val()
+            kontrol()
         })
         tiksayref.on("value", (snapshot) => {
             tiksay = snapshot.val()
@@ -224,7 +225,7 @@
                         tiksayref.set(tiksay)
                         pozref.set(isaret)
 
-                        kontrol();
+                        
                         console.log(isaret);
                     } else {
 
