@@ -235,7 +235,18 @@
             $("small").text(skorx + ":" + skoro);
             reset();
         }
+        function reset() {
+            $("td").text("?");
+            for (let i = 0; i < 9; i++) {
+                isaret[i] = undefined;
 
+            }
+            Sira = 1;
+            tiksay = 0;
+
+
+
+        }
         $().ready(function () {
 
 
@@ -289,18 +300,7 @@
 
 
 
-            function reset() {
-                $("td").text("?");
-                for (let i = 0; i < 9; i++) {
-                    isaret[i] = undefined;
 
-                }
-                Sira = 1;
-                tiksay = 0;
-
-
-
-            }
         });
 
     </script>
